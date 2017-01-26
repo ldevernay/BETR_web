@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <secteur>
+    <titre>Cuisines centrales</titre>
+    <references>
+      <reference id="0">
+        <titre>Construction de la cuisine centrale de la Région Rhône Alpes</titre>
+        <detail>Mission: En équipe de Maîtrise d’œuvre.
+          Production : 5 jours sur 7 - 2500 repas / jour
+          Montant de l’opération : 4,5 M. €  HT
+          Maître d’ouvrage : CG 69
+          Livrée en 2012.</detail>
+          <img>/home/laurentdev/git_repo/BETR/images/DSCN1348.jpg</img>
+        </reference>
+      </references>
+    </secteur>
+  </data>
