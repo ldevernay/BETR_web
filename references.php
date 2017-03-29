@@ -14,17 +14,22 @@ foreach (new RecursiveIteratorIterator(
         // echo $subdir[0]." : ".$subdir[1]."<br/>";
         $domain = $subdir[0];
         $client = $subdir[1];
+        $regex = '/^[a-z]/i';
 
-        echo $domain." : ".$client."<br/>";
+        if (preg_match($regex, $domain)){
 
-        if (!array_key_exists($domain, $domains)){
-          $domains[$domain] = array();
+          echo $domain." : ".$client."<br/>";
+
+          if (!array_key_exists($domain, $domains)){
+            $domains[$domain] = array();
+          }
+
+          if (preg_match($regex, $client) && !in_array($client, $domains[$domain])){
+            echo "toto";
+            array_push($domains[$domain], $client);
+          }
+          var_dump($domains);
         }
-
-        if (!array_key_exists($client, $domains[$domain])){
-          ($domains[$domain]).array_push($client);
-        }
-        var_dump($domains);
       }
     } else {
       // $path_parts = pathinfo($file);
