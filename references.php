@@ -1,6 +1,6 @@
 <?php
 // // $path = "\home\laurentdev\git_repo\BETR";
-$path = "/home/laurentdev/git_repo/BETR/img2";
+$path = "/home/laurentdev/git_repo/BETR/img";
 $domains = [];
 $new_domain = false;
 
@@ -8,8 +8,12 @@ foreach (new RecursiveIteratorIterator(
   new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::KEY_AS_PATHNAME), RecursiveIteratorIterator::CHILD_FIRST) as $file => $info) {
     if (!$info->isDir())
     {
+      $path_parts = pathinfo($file);
+      $ext = $path_parts['extension'];
+      if ($ext == 'jpg' || $ext == 'JPG'){
+
       // echo $file."<br />";
-      $dir = explode('img2/', $file);
+      $dir = explode('img/', $file);
       if ($dir[1] != null){
         //  echo $dir[1]."<br/>";
         $subdir = explode('/', $dir[1]);
@@ -44,13 +48,11 @@ foreach (new RecursiveIteratorIterator(
           }
           // var_dump($domains);
         }
-        $path_parts = pathinfo($file);
-        $ext = $path_parts['extension'];
-        if ($ext == 'jpg' || $ext == 'JPG'){
-          $arr = explode('BETR/', $file);
-          addImage($arr[1]);
-        }
+
       }
+      $arr = explode('BETR/', $file);
+      addImage($arr[1]);
+    }
     }
     // else {
     //   // $path_parts = pathinfo($file);
