@@ -4,7 +4,7 @@ $path = "/home/laurentdev/git_repo/BETR/img";
 $domains = [];
 foreach (new RecursiveIteratorIterator(
   new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::KEY_AS_PATHNAME), RecursiveIteratorIterator::CHILD_FIRST) as $file => $info) {
-    if ($info->isDir())
+    if (!$info->isDir())
     {
       // echo $file."<br />";
       $dir = explode('img/', $file);
@@ -18,17 +18,22 @@ foreach (new RecursiveIteratorIterator(
 
         if (preg_match($regex, $domain)){
 
-          echo $domain." : ".$client."<br/>";
+          // echo $domain." : ".$client."<br/>";
 
           if (!array_key_exists($domain, $domains)){
             $domains[$domain] = array();
           }
 
           if (preg_match($regex, $client) && !in_array($client, $domains[$domain])){
-            echo "toto";
             array_push($domains[$domain], $client);
           }
-          var_dump($domains);
+          // var_dump($domains);
+        }
+        $path_parts = pathinfo($file);
+        $ext = $path_parts['extension'];
+        if ($ext == 'jpg' || $ext == 'JPG'){
+          $arr = explode('BETR/', $file);
+          constructCard($arr[1]);
         }
       }
     } else {
