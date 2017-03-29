@@ -3,7 +3,16 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
+ .panel-heading a:after {
+     font-family:'Glyphicons Halflings';
+     content:"\e114";
+     float: right;
+     color: grey;
+ }
+ .panel-heading a.collapsed:after {
+     content:"\e080";
+   }
+   
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../images/archi.jpg') no-repeat center center fixed;
