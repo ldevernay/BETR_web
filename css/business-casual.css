@@ -12,7 +12,12 @@
  .panel-heading a.collapsed:after {
      content:"\e080";
    }
-   
+
+   .dl-horizontal dt
+ {
+     white-space: normal;
+ }
+
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../images/archi.jpg') no-repeat center center fixed;
