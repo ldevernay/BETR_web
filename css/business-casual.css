@@ -3,6 +3,10 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+ cite {
+     text-align: center;
+     font-size: large;
+ }
  .panel-heading a:after {
      font-family:'Glyphicons Halflings';
      content:"\e114";
@@ -48,6 +52,10 @@ p {
 hr {
     max-width: 400px;
     border-color: #999999;
+}
+
+.emphasis {
+    text-decoration-line: underline;
 }
 
 .brand,
